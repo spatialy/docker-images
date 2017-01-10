@@ -6,7 +6,7 @@ RUN a2enmod rewrite
 
 # Install PHP extensions
 RUN apt-get update && \
-	apt-get install -y libc-client-dev libicu-dev libkrb5-dev libmcrypt-dev libssl-dev unzip zip cron
+	apt-get install -y libc-client-dev libicu-dev libkrb5-dev libmcrypt-dev libssl-dev unzip zip cron curl
 RUN rm -rf /var/lib/apt/lists/*
 
 ## FROM ORIGINAL
