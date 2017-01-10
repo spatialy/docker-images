@@ -6,34 +6,10 @@ RUN a2enmod rewrite
 
 # Install PHP extensions
 RUN apt-get update && \
-	apt-get install -qy libc-client-dev libicu-dev libkrb5-dev libmcrypt-dev libssl-dev unzip zip cron
+	apt-get install -y libc-client-dev libicu-dev libkrb5-dev libmcrypt-dev libssl-dev unzip zip cron
 RUN rm -rf /var/lib/apt/lists/*
-
-#### FROM ORIGINAL
-# RUN docker-php-ext-configure imap --with-imap --with-imap-ssl --with-kerberos
-# RUN docker-php-ext-install imap intl mbstring mcrypt mysqli pdo pdo_mysql zip curl xml xmlreader
-#####
-
-apt-get install -qy \
-            php7.0-imap \
-            php7.0-intl \
-            php7.0-mcrypt \
-            php7.0-mysql \
-            php7.0-curl \
-            php7.0-mbstring \
-            php7.0-xml \
-            php7.0-pdo \
-            php7.0-pdo-mysql \
-            php7.0-xmlreader \
-            php7.0-xmlwriter \
-            && \
-    apt-get autoremove -qy --purge \
-            && \
-    apt-get clean -qy && \
-    rm -rf /tmp/* \
-           /var/lib/apt/lists/* \
-           /var/tmp/*
-
+RUN docker-php-ext-configure imap --with-imap --with-imap-ssl --with-kerberos
+RUN docker-php-ext-install imap intl mbstring mcrypt mysqli pdo pdo_mysql zip
 
 VOLUME /var/www/html
 
