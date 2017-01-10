@@ -1,5 +1,5 @@
-FROM debian:jessie
-MAINTAINER Michael Richard <michael.richard@oriaks.com>
+FROM ubuntu:16.04
+MAINTAINER Yulian Diaz <yulian.diaz@ubiquos.io>
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -25,7 +25,6 @@ RUN apt-get update -qy && \
 
 RUN mkdir -p /etc/apache2/vhost.d
 
-COPY remoteip.conf /etc/apache2/mods-available/remoteip.conf
 COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
 COPY default-ssl.conf /etc/apache2/sites-available/default-ssl.conf
 COPY default.conf /etc/apache2/vhost.d/default.conf
