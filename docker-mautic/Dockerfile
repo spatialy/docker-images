@@ -15,7 +15,7 @@ RUN rm -rf /var/lib/apt/lists/*
 ####
 
 #Install PHP Extension New Way
-  apt-get install -qy \
+RUN apt-get install -qy \
             php7.0-imap \
             php7.0-intl \
             php7.0-mcrypt \
