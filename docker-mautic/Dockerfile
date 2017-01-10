@@ -63,4 +63,4 @@ RUN /usr/bin/crontab /etc/cron.d/mautic.cron
 
 RUN chmod 755 /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
-CMD ["apache2"]
+CMD ["apachectl"]
