@@ -5,7 +5,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update -qy && \
     apt-get install -qy \
-            libapache2-mod-php7.0 \
+            libapache2-mod-php5 \
             && \
     apt-get autoremove -qy --purge && \
     apt-get clean -qy && \
