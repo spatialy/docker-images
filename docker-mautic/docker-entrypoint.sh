@@ -47,6 +47,17 @@ if ! [ -e index.php -a -e app/AppKernel.php ]; then
         echo >&2 "Complete! Mautic has been successfully copied to $(pwd)"
 fi
 
+echo >&2 "========================================================================"
+echo >&2
+echo >&2 "..... This server is now configured to run Mautic!"
+echo >&2 "..... You will need the following database information to install Mautic:"
+echo >&2 "..... Host Name: $MAUTIC_DB_HOST"
+echo >&2 "..... Database Name: $MAUTIC_DB_NAME"
+echo >&2 "..... Database Username: $MAUTIC_DB_USER"
+echo >&2 "..... Database Password: $MAUTIC_DB_PASSWORD"
+echo >&2
+echo >&2 "========================================================================"
+
 # Ensure the MySQL Database is created
 php /makedb.php "$MAUTIC_DB_HOST" "$MAUTIC_DB_USER" "$MAUTIC_DB_PASSWORD" "$MAUTIC_DB_NAME"
 
