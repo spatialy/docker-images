@@ -1,11 +1,12 @@
-FROM php:5.6-apache
-MAINTAINER Autoize <info@autoize.com> (@autoize)
+FROM spatialy/php7
+MAINTAINER UBIQUOS <info@ubiquos.io> (@ubiquos)
 
 # Enable Apache Rewrite Module
 RUN a2enmod rewrite
 
 # Install PHP extensions
-RUN apt-get update && apt-get install -y libc-client-dev libicu-dev libkrb5-dev libmcrypt-dev libssl-dev unzip zip cron
+RUN apt-get update && \
+	apt-get install -y libc-client-dev libicu-dev libkrb5-dev libmcrypt-dev libssl-dev unzip zip cron
 RUN rm -rf /var/lib/apt/lists/*
 RUN docker-php-ext-configure imap --with-imap --with-imap-ssl --with-kerberos
 RUN docker-php-ext-install imap intl mbstring mcrypt mysqli pdo pdo_mysql zip
