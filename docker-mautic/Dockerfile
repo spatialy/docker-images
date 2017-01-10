@@ -8,8 +8,28 @@ RUN a2enmod rewrite
 RUN apt-get update && \
 	apt-get install -y libc-client-dev libicu-dev libkrb5-dev libmcrypt-dev libssl-dev unzip zip cron
 RUN rm -rf /var/lib/apt/lists/*
-RUN docker-php-ext-configure imap --with-imap --with-imap-ssl --with-kerberos
-RUN docker-php-ext-install imap intl mbstring mcrypt mysqli pdo pdo_mysql zip
+
+## FROM ORIGINAL
+# RUN docker-php-ext-configure imap --with-imap --with-imap-ssl --with-kerberos
+# RUN docker-php-ext-install imap intl mbstring mcrypt mysqli pdo pdo_mysql zip
+####
+
+#Install PHP Extension New Way
+  apt-get install -qy \
+            php7.0-imap \
+            php7.0-intl \
+            php7.0-mcrypt \
+            php7.0-mysql \
+            php7.0-curl \
+            php7.0-mbstring \
+            php7.0-xml \
+            && \
+    apt-get autoremove -qy --purge \
+            && \
+    apt-get clean -qy && \
+    rm -rf /tmp/* \
+           /var/lib/apt/lists/* \
+           /var/tmp/*
 
 VOLUME /var/www/html
 
