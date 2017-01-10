@@ -11,6 +11,7 @@ RUN apt-get update -qy && \
             php7.0-mysql \
             php7.0-curl \
             php7.0-mbstring \
+            php7.0-xml \
             && \
     apt-get autoremove -qy --purge \
             && \
