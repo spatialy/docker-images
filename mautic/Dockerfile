@@ -10,6 +10,7 @@ RUN apt-get update -qy && \
             php7.0-mcrypt \
             php7.0-mysql \
             php7.0-curl \
+            php7.0-mbstring \
             && \
     apt-get autoremove -qy --purge \
             && \
