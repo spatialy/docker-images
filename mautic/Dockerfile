@@ -1,15 +1,15 @@
-FROM php:apache
+FROM php:7.0-apache
 MAINTAINER Yulian Diaz <yulian.diaz@ubiquos.io>
 
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update -qy && \
     apt-get install -qy \
-            php7-imap \
-            php7-intl \
-            php7-mcrypt \
-            php7-mysql \
-            php7-curl \
+            php7.0-imap \
+            php7.0-intl \
+            php7.0-mcrypt \
+            php7.0-mysql \
+            php7.0-curl \
             && \
     apt-get autoremove -qy --purge \
             && \
