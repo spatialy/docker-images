@@ -1,4 +1,4 @@
-NAME = oriaks/apache
+NAME = spatialy/apache
 VERSION = 2.4
 
 .PHONY: all build tag_latest

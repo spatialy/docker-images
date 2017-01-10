@@ -1,4 +1,4 @@
-FROM php:7.0-apache
+FROM spatialy/php7
 MAINTAINER Yulian Diaz <yulian.diaz@ubiquos.io>
 
 ENV DEBIAN_FRONTEND noninteractive
