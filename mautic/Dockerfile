@@ -1,4 +1,4 @@
-FROM php/php:apache
+FROM php:apache
 MAINTAINER Yulian Diaz <yulian.diaz@ubiquos.io>
 
 ENV DEBIAN_FRONTEND noninteractive
