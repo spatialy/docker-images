@@ -1,5 +1,5 @@
 mariadb:
-  image: oriaks/mariadb:latest
+  image: mariadb
   environment:
     MYSQL_DATABASE: mautic
     MYSQL_USER: mautic
@@ -9,7 +9,7 @@ mariadb:
     - /var/lib/mysql
 
 mautic:
-  image: oriaks/mautic:latest
+  image: spatialy/mautic:latest
   links:
     - mariadb:mysql
   ports:

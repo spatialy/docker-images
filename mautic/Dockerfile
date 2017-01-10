@@ -1,15 +1,15 @@
-FROM oriaks/php:latest
-MAINTAINER Michael Richard <michael.richard@oriaks.com>
+FROM php/php:apache
+MAINTAINER Yulian Diaz <yulian.diaz@ubiquos.io>
 
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update -qy && \
     apt-get install -qy \
-            php5-imap \
-            php5-intl \
-            php5-mcrypt \
-            php5-mysql \
-            php5-curl \
+            php7-imap \
+            php7-intl \
+            php7-mcrypt \
+            php7-mysql \
+            php7-curl \
             && \
     apt-get autoremove -qy --purge \
             && \
@@ -37,7 +37,7 @@ RUN apt-get update -qy && \
            /var/lib/apt/lists/* \
            /var/tmp/*
 
-ENV MAUTIC_VERSION 2.2.1
+ENV MAUTIC_VERSION 2.5.1
 
 RUN apt-get update -qy && \
     apt-get install -qy \

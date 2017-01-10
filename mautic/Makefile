@@ -1,5 +1,5 @@
-NAME = oriaks/mautic
-VERSION = 2.2
+NAME = ubiquos/mautic
+VERSION = 2.5.1
 
 .PHONY: all build tag_latest
 
