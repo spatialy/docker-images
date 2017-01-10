@@ -1,11 +1,11 @@
-FROM oriaks/apache:latest
-MAINTAINER Michael Richard <michael.richard@oriaks.com>
+FROM spatialy/apache:latest
+MAINTAINER Yulian Diaz <yulian.diaz@ubiquos.io>
 
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update -qy && \
     apt-get install -qy \
-            libapache2-mod-php5 \
+            libapache2-mod-php7.0 \
             && \
     apt-get autoremove -qy --purge && \
     apt-get clean -qy && \
