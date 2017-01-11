@@ -63,6 +63,6 @@ RUN /usr/bin/crontab /etc/cron.d/mautic.cron
 
 RUN chmod 755 /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
-#CMD [“apache2”, “-DFOREGROUND”]
+CMD ["apachectl", "-DFOREGROUND"]
 
-RUN service apache2 restart
+
