@@ -19,9 +19,9 @@ RUN apt-get update -qy && \
            /var/lib/apt/lists/* \
            /var/tmp/* \
            && \
-    rm -rf /etc/ssl/certs/ssl-cert-snakeoil.pem \
-           /etc/ssl/private/ssl-cert-snakeoil.key \
-           /var/www/html/*
+    #rm -rf /etc/ssl/certs/ssl-cert-snakeoil.pem \
+    #       /etc/ssl/private/ssl-cert-snakeoil.key \
+    rm -rf       /var/www/html/*
 
 RUN mkdir -p /etc/apache2/vhost.d
 
