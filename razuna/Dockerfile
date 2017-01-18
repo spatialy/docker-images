@@ -26,12 +26,14 @@ RUN apt-get update -qy && \
             dcraw \
             fdkaac \
             ffmpeg \
+            file \
             flac \
             ghostscript \
             gpac \
             imagemagick \
             lame \
             libimage-exiftool-perl \
+            mp4v2-utils \
             openjdk-8-jre-headless \
             vorbis-tools \
             && \
@@ -94,6 +96,9 @@ COPY dsp_firsttime.cfm /var/lib/tomcat8/webapps/ROOT/admin/views/dsp_firsttime.c
 COPY dsp_firsttime_account.cfm /var/lib/tomcat8/webapps/ROOT/admin/views/ajaxparts/dsp_firsttime_account.cfm
 RUN sed -i 's|localhost:80.0|localhost|g;' /var/lib/tomcat8/webapps/ROOT/global/cfc/*.cfc
 RUN echo '<cflocation url="raz1/dam/index.cfm">' > /var/lib/tomcat8/webapps/ROOT/index.cfm
+
+COPY ogg-cover-art /usr/local/bin/ogg-cover-art
+RUN chmod +x /usr/local/bin/ogg-cover-art
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 RUN chmod +x /docker-entrypoint.sh
